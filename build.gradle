@@ -1,0 +1,19 @@
+group 'com.codesanook.example'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+//เพิ่ม plugin groovy เข้าไป
+apply plugin: 'groovy'
+
+sourceCompatibility = 1.7
+repositories {
+    mavenCentral()
+}
+
+//เพิ่ม lib ที่ต้องใช้ใน testCompile คือ groovy และ spock ดู version ให้ตรงกันด้วยนะครับ
+dependencies {
+    compile 'javax.mail:mail:1.4.7'
+    testCompile 'cglib:cglib-nodep:3.2.1'
+    testCompile 'org.codehaus.groovy:groovy-all:2.4.4'
+    testCompile "org.spockframework:spock-core:1.0-groovy-2.4"
+}
